@@ -23,6 +23,13 @@
       :collapse-transition="false"
       router
       :default-active="activePath">
+
+      <!-- unique-opened：只打开一个 -->
+      <!-- collapse：折叠效果（在前加一个属性绑定：） -->
+      <!-- collapse-transition 是否开启折叠动画 -->
+      <!-- router:是否使用vue-router的模式，启用该模式会在激活导航时以index为path进行路由跳转 -->
+      <!-- default-active -->
+
       <!-- 一级菜单 -->
       <el-submenu :index="item.id+''" v-for="item in menulist" :key="item.id">
           <!-- 一级菜单的模板区域 -->

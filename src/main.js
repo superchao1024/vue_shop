@@ -22,5 +22,6 @@ Vue.config.productionTip = false
 
 new Vue({
   router,
+  // render函数是vue通过js渲染dom结构的函数createElement，约定可以简写为h
   render: h => h(App)
 }).$mount('#app')

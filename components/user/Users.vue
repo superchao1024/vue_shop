@@ -6,13 +6,12 @@
       <el-breadcrumb-item>用户管理</el-breadcrumb-item>
       <el-breadcrumb-item>用户列表</el-breadcrumb-item>
 </el-breadcrumb>
-
 <!-- 卡片视图区 -->
 <el-card>
   <!-- 搜索与添加区域 -->
-
   <el-row :gutter="20">
       <el-col :span="8">
+        <!-- clearable：可一键清空 ，触发clear事件，重新发起请求 -->
     <el-input placeholder="请输入内容" v-model="queryInfo.query" clearable @clear="getUserList">
     <el-button slot="append" icon="el-icon-search" @click="getUserList"></el-button>
   </el-input>
@@ -41,6 +40,8 @@
             <!-- 删除按钮 -->
             <el-button type="danger" icon="el-icon-delete" size="mini" @click="removeUserById(scope.row.id)"></el-button>
             <!-- 分配角色 -->
+            <!-- enterable:鼠标进入到tooltip之后自动隐藏 -->
+            <!-- place：tooltip出现的位置 -->
             <el-tooltip effect="dark" content="分配角色" placement="top" :enterable="false">
                  <el-button type="warning" icon="el-icon-setting" size="mini"></el-button>
             </el-tooltip>
@@ -180,7 +181,7 @@ export default {
           { required: true, message: '请输入邮箱', trigger: 'blur' },
           {
             min: 6,
-            max: 15,
+            max: 30,
             message: '邮箱的长度在6-15之间',
             trigger: 'blur'
           },
